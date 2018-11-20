@@ -2,6 +2,7 @@ import tensorflow as tf
 from tensorflow.contrib.layers import flatten
 
 def LeNet_5(x):
+    print('Lenet_5 is selected')
     # Layer 1 : Convolutional Layer. Input = 32x32x1, Output = 28x28x1.
     conv1_w = tf.Variable(tf.truncated_normal(shape=[5, 5, 1, 6], mean=0, stddev=0.1))
     conv1_b = tf.Variable(tf.zeros(6))
@@ -34,7 +35,8 @@ def LeNet_5(x):
     logits = tf.matmul(fc2, fc3_w) + fc3_b
     return logits
 
-def MobileNet(x):
+def MobileNet_4(x):
+    print('MobileNet is selected')
     conv1_w = tf.Variable(tf.truncated_normal(shape=[3, 3, 1,8], mean=0, stddev=0.1))
     conv1_b = tf.Variable(tf.zeros(8))
     conv1 = tf.nn.conv2d(x, conv1_w, strides=[1, 2, 2, 1], padding='VALID', name='conv1') + conv1_b
@@ -70,10 +72,12 @@ def MobileNet(x):
     flatten_output = flatten(norm4)
     logits = tf.matmul(flatten_output, fc1_w) + fc1_b
     return logits
-
+'''
 if __name__ =='__main__':
+    selected = 
     net = LeNet_5(x)
     net1 = MobileNet(x) # taken only top 4 layers
     print(net)
     print(net1)
 
+'''
