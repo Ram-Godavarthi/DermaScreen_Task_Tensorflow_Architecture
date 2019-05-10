@@ -6,7 +6,7 @@ default = edict()
 # network settings
 default.network = 'MobileNet_4'
 default.lr = 0.001
-default.image_size = 28
+default.image_size = 32
 default.epoch=  2
 default.batch_size = 128
 
